@@ -51,4 +51,22 @@ public class ProductsStepDefs extends BaseClass {
     }
 
 
+    @When("User clicks on checkout")
+    public void userClicksOnCheckout() {
+        CheckoutPage.clickCheckoutButton();
+    }
+
+    @Then("Alert message appears")
+    public void alertMessageAppears() {
+        CheckoutPage.validateAlertMessage("Products marked with *** are not available in the desired quantity or not in stock!\n" +
+                "×");
+    }
+    @And("item is added to cart")
+    public void itemIsAddedToCart() {
+        userClicksOnShowAllNotebooksAndLaptopsLink();
+        userClicksOnAMacbook();
+        userClicksToAddToCartButton();
+        userClicksOnShoppingCartButton();
+        productIsAddedToCart();
+    }
 }

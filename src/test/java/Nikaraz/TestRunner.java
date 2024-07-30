@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/features/Cart.feature"},
+        features = {"src/test/resources/features/Checkout.feature"},
         glue = {"Nikaraz.StepDefs"}, // Adjust based on your package structure
         plugin = {
                 "pretty",

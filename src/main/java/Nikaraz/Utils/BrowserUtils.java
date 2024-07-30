@@ -72,7 +72,7 @@ public class BrowserUtils extends BaseClass {
     public static void validateText(String element, String expectedText) {
         WebElement webElement = findAndWaitForElement(element);
         if (webElement != null) {
-            String actualText = webElement.getText().trim(); // Trimming whitespace
+            String actualText = webElement.getText().trim();
             System.out.println("Validating text for element: " + element + " Expected: " + expectedText + " Actual: " + actualText); // Logging
             assertTrue("Expected Text \"" + expectedText + "\" does not match actual text \"" + actualText + "\"", actualText.equals(expectedText));
         } else {
