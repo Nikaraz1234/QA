@@ -19,12 +19,17 @@ public class BrowserUtils extends BaseClass {
     static Properties properties = PropertiesUtil.loadFrameworkProperties();
 
     public static void clickElement(String element) {
-        WebElement webElement = findAndWaitForElement(element);
-        if (webElement != null) {
-            System.out.println("Clicking element: " + element); // Logging
-            webElement.click();
-        } else {
-            System.out.println("Failed to find and click the element: " + element);
+        try {
+            WebElement webElement = findAndWaitForElement(element);
+            if (webElement != null) {
+                System.out.println("Clicking element: " + element);
+                webElement.click();
+            } else {
+                System.out.println("Failed to find and click the element: " + element);
+            }
+        } catch (Exception e) {
+            System.out.println("Exception occurred while clicking element: " + element);
+            e.printStackTrace();
         }
     }
 
